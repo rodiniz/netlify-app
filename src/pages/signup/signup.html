@@ -1,0 +1,61 @@
+<div class="auth-page">
+  <ui-card bg="light" shadow elevation="lg" rounded="true" class="auth-card">
+    <div class="auth-body">
+
+      <div class="auth-logo">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#192836"/>
+          <path d="M9 18 Q14 13 19 18 Q24 23 29 18 Q34 13 39 18" stroke="white" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <path d="M9 25 Q14 20 19 25 Q24 30 29 25 Q34 20 39 25" stroke="white" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <path d="M9 32 Q14 27 19 32 Q24 37 29 32 Q34 27 39 32" stroke="white" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-subtitle">Already have an account? <a href="/" class="auth-link">Sign in</a></p>
+
+      <form id="signupForm" novalidate>      
+
+        <div class="field-group">
+          <label class="field-label">Email Address</label>
+          <ui-input
+           icon="mail"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Email address"
+            required
+          ></ui-input>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Password</label>
+          <ui-input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Min. 8 characters"
+            icon="lock"
+            icon-position="right"
+            required
+          ></ui-input>
+        </div>
+
+        <div id="errorMessage" class="auth-error" role="alert" aria-live="polite"></div>
+
+        <ui-button
+          type="submit"
+          id="submitBtn"
+          variant="primary"
+          size="lg"
+          icon="user-plus"
+          class="auth-submit"
+        >Create Account</ui-button>
+
+      </form>
+
+    </div>
+  </ui-card>
+</div>
+
+<ui-toast id="signupToast" position="top-right"></ui-toast>
