@@ -1,7 +1,7 @@
 import '@diniz/webcomponents';
 import './signup.css';
 import template from './signup.html?raw';
-import { getFormValues, http, queryElement, UIButton, UIToast, validateForm } from '@diniz/webcomponents';
+import { getFormValues, http, UIButton, UIToast, validateForm } from '@diniz/webcomponents';
 import { getFirstValidationError } from '../shared/formValidation';
 
 
@@ -44,8 +44,8 @@ export class SignupPage extends HTMLElement {
                 } else {
                     showError('Signup failed. Please try again.');
                 }
-            } catch {
-                showError('Something went wrong. Please try again.');
+            } catch (error) {
+                showError(error instanceof Error ? error.message : 'Something went wrong. Please try again.');
             } finally {
                 if (submitBtn) submitBtn.isProcessing = false;
             }
